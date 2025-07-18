@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Tracker</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Meue Rastreador de Mídias</h1>
+            <p>Controle seus filmes, séries, animes e mangás assistidos/lidos!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="adicionar-midia">
+            <h2>Adicionar Nova Mídia</h2>
+            <form id="form-midia">
+                <div>
+                    <label for="nome-midia">Nome da Mídia:</label>
+                    <input type="text" name="nome-midia" id="nome-midia" required>
+                </div>
+
+                <div>
+                    <label for="tipo-midia">Tipo:</label>
+                    <select name="tipo-midia" id="tipo-midia">
+                        <option value="filme">Filme</option>
+                        <option value="serie">Série</option>
+                        <option value="anime">Anime</option>
+                        <option value="manga">Mangá</option>
+                        <option value="livro">Livro</option>
+                    </select>
+                </div>
+
+                <button type="submit">Adicionar à Lista</button>
+            </form>
+        </section>
+
+        <section id="lista-midias">
+            <h2>Minha Lista</h2>
+            <ul id="lista-de-midia-aqui">
+
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jhean. Media Tracker.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
