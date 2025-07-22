@@ -1,0 +1,102 @@
+:root {
+    /* Cores */
+    --cor-principal:#61dafb; 
+    --cor-fundo-escuro: #282c34;
+    --cor-fundo-card: #3a3f47;
+    --cor-texto-claro: #e0e0e0; 
+    --cor-texto-suave: #a0a0a0;
+    --cor-borda-sutil: #4d545f;
+    --cor-botao-adicionar: #28a745;
+    --cor-botao-remover: #dc3545;
+    --cor-fundo-header-footer: #292832;
+
+    /* Fontes */
+    --fonte-principal: 'Arial', sans-serif;
+    --fonte--titulos: 'Helvetica', sans-serif;
+
+    /* Espaçamentos e tamanhos comuns */
+    --padding-secao: 40px;
+    --borda-arredondada: 8px;
+    --espacamento-entre-elementos: 15px;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box; /* Inclui padding e border na largura/altura total */
+    margin: 0; /* Remove margens padrão dos navegadores */
+    padding: 0; /* Remove paddings padrão dos navegadores */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+}
+
+/* Estilo para o container */
+.container {
+    max-width: 960px; /* Largura máxima para o conteúdo principal */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 var(--espacamento-entre-elementos);
+}
+
+/* Header */
+
+header {
+    background-color: var(--cor-fundo-header-footer);
+    color: var(--cor-principal);
+    padding: var(--padding-secao) 0;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-principal);
+    margin-bottom: var(--espacamento-entre-elementos) * 2; /* Espaçamento maior antes do main */
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: var(--cor-texto-suave);
+}
+
+/* Seções principais */
+main section {
+    background-color: var(--cor-fundo-card);
+    padding: var(--padding-secao);
+    border-radius: var(--borda-arredondada);
+    margin-bottom: var(--espacamento-entre-elementos) * 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main section h2 {
+    color: var(--cor-principal);
+    font-size: 2em;
+    margin-bottom: var(--espacamento-entre-elementos) * 1.5;
+    text-align: center;
+}
+
+/* Formulário de Adição de Mídia */
+#form-midia div {
+    margin-bottom: var(--espacamento-entre-elementos);
+}
+
+#form-midia label {
+    display: block; /* Cada label em uma nova linha */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor-texto-claro);
+}
+
+#form-midia input[type="text"],
+#form-midia select {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px;
+    border: 1px solid var(--cor-borda-sutil);
+    border-radius: 4px;
+    background-color: #333; /* Fundo do input */
+    color: var(--cor-texto-claro);
+    font-size: 1em;
+}
