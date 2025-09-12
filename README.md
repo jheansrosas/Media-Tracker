@@ -7,7 +7,7 @@ O que é
 O Media Tracker é uma aplicação web para você acompanhar seus filmes, séries e outras mídias.
 Permite organizar o que você já assistiu e o que ainda quer ver, de forma simples e rápida.
 
-Funcionalidades
+#Funcionalidades:
 
 Listar filmes e séries.
 
@@ -17,10 +17,10 @@ Visualizar detalhes básicos de cada mídia.
 
 Interface intuitiva e leve, fácil de usar.
 
-Tecnologias
+#Tecnologias:
 
 HTML, CSS e JavaScript
 
-Objetivo
+#Objetivo:
 
 Este projeto é focado em praticar manipulação de DOM, lógica de front-end e experiência do usuário, mantendo simplicidade e funcionalidade.
