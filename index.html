@@ -4,55 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Tracker</title>
-    <link rel="stylesheet" href="style/style.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Rastreador de Mídias</h1>
-            <p>Controle seus filmes, séries, animes e mangás assistidos/lidos!</p>
-        </div>
+        <h1>Media Tracker</h1>
     </header>
 
-    <main class="container">
-        <section id="adicionar-midia">
-            <h2>Adicionar Nova Mídia</h2>
-            <form id="form-midia">
-                <div>
-                    <label for="nome-midia">Nome da Mídia:</label>
-                    <input type="text" name="nome-midia" id="nome-midia" required autocomplete="off">
-                </div>
+    <main>
+        <section class="form-section">
+            <h2>Adicionar Mídia</h2>
+            <form action="" id="media-form">
+                <input type="text" id="media-name" placeholder="Nome da mídia" required>
 
-                <div>
-                    <label for="tipo-midia">Tipo:</label>
-                    <select name="tipo-midia" id="tipo-midia">
-                        <option value="filme">Filme</option>
-                        <option value="serie">Série</option>
-                        <option value="anime">Anime</option>
-                        <option value="manga">Mangá</option>
-                        <option value="livro">Livro</option>
-                    </select>
-                </div>
+                <select name="media-type" id="media-type">
+                    <option value="Filme">Filme</option>
+                    <option value="Série">Série</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Mangá">Mangá</option>
+                    <option value="Livro">Livro</option>
+                </select>
 
-                <button type="submit">Adicionar à Lista</button>
+                <label for="progress">Onde parei</label>
+                <input 
+                    type="text"
+                    id="progress"
+                    placeholder="Ex: T2 EP5, Cap 7, Página 32"
+                >
+
+                <button type="submit">Adicionar</button>
             </form>
         </section>
 
-        <section id="lista-midias">
+        <section class="list-section">
             <h2>Minha Lista</h2>
-            <ul id="lista-de-midia-aqui">
+            <ul id="media-list">
 
             </ul>
         </section>
+
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Jhean. Media Tracker.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
+    
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
