@@ -26,6 +26,13 @@
                     <option value="Livro">Livro</option>
                 </select>
 
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="planned">Planejado</option>
+                    <option value="watching">Assistindo</option>
+                    <option value="completed">Finalizado</option>
+                </select>
+
                 <label for="progress">Onde parei</label>
                 <input 
                     type="text"
@@ -39,6 +46,13 @@
 
         <section class="list-section">
             <h2>Minha Lista</h2>
+            <label for="filter">Filtrar por status:</label>
+            <select id="filter">
+                <option value="all">Todos</option>
+                <option value="planned">Planejado</option>
+                <option value="watching">Assistindo</option>
+                <option value="completed">Finalizado</option>
+            </select>
             <ul id="media-list">
 
             </ul>

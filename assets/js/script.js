@@ -4,6 +4,8 @@ const inputName = document.getElementById("media-name");
 const selectType = document.getElementById("media-type");
 const mediaList = document.getElementById("media-list");
 const progress = document.getElementById("progress");
+const status = document.getElementById("status");
+const filter = document.getElementById("filter");
 
 // Escutando o envio do formulário
 form.addEventListener("submit", function(event){
@@ -19,8 +21,20 @@ form.addEventListener("submit", function(event){
     // Criar elemento da lista
     const li = document.createElement("li");
 
+    const statusMap = {
+        planned: "Planejado",
+        watching: "Assistindo",
+        completed: "Finalizado"
+    };
+
     li.innerHTML = `
-        ${name} (${type})
+        <strong>${name}</strong> (${type})
+        <br>
+        <span>Status: ${statusMap[status.value]}</span>
+        <br>
+        <span class="progress-text">Progresso: ${progress.value || "Não iniciado"}</span>
+        <br>
+        <button class="edit-btn">Editar</button>
         <button class="remove-btn">Remover</button>
     `;
 
@@ -43,6 +57,63 @@ mediaList.addEventListener("click", function(event) {
         saveMedia();
     }
 
+    if(event.target.classList.contains("edit-btn")) {
+        
+        const li = event.target.parentElement;
+        const progressSpan = li.querySelector(".progress-text");
+        const statusSpan = li.querySelector("span");
+
+        const text = li.querySelector("strong").nextSibling.textContent;
+
+        let mudou = false;
+
+        if(text.includes("Filme")) {
+
+            const novoStatus = prompt("Digite: Planejado ou Finalizado");
+
+            if(novoStatus !== null) {
+                statusSpan.textContent = "Status: " + novoStatus;
+                mudou = true;
+            }
+
+        } else {
+
+            const novoProgresso = prompt("Atualize o progresso:");
+
+            if(novoProgresso !== null) {
+                progressSpan.textContent = "Progresso: " + novoProgresso;
+                mudou = true;
+            }
+
+        }
+
+        if(mudou) {
+            saveMedia();
+        }
+
+    }
+
+});
+
+filter.addEventListener("change", function() {
+    const selected = filter.value;
+    const items = mediaList.querySelectorAll("li");
+
+    const statusMap = {
+        planned: "Planejado",
+        watching: "Assistindo",
+        completed: "Finalizado"
+    };
+
+    items.forEach(function(item) {
+        const statusText = item.querySelector("span").textContent.replace("Status:", "").trim();
+
+        if(selected === "all" || statusText === statusMap[selected]){
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
 });
 
 function saveMedia() {
@@ -56,10 +127,14 @@ function saveMedia() {
         const name = parts[0].trim();
         const type = parts[1].replace(")","").trim();
 
+        const progressText = Item.querySelector(".progress-text").textContent.replace("Progresso:", "").trim();
+        const statusText = Item.querySelector("span").textContent.replace("Status:", "").trim();
+
         items.push({
             name: name,
             type: type,
-            progress: progress.value
+            status: statusText,
+            progress: progressText
         });
     });
 
@@ -81,8 +156,11 @@ function loadMedia() {
         li.innerHTML = `
             <strong>${item.name}</strong> (${item.type})
             <br>
-            <span>Progresso: ${item.progress || "Não iniciado"}</span>
+            <span>Status: ${item.status || "Planejado"}</span>
             <br>
+            <span class="progress-text">Progresso: ${item.progress || "Não iniciado"}</span>
+            <br>
+            <button class="edit-btn">Editar</button>
             <button class="remove-btn">Remover</button>
         `;
 
