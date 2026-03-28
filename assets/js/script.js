@@ -121,11 +121,11 @@ function saveMedia() {
     const items = [];
     const listItems = mediaList.querySelectorAll("li");
     listItems.forEach(function(Item) {
-        const text = Item.textContent.replace("Remover","").trim();
-        const parts = text.split("(");
+        const strongText = Item.querySelector("strong").textContent;
+        const typeText = Item.querySelector("strong").nextSibling.textContent;
 
-        const name = parts[0].trim();
-        const type = parts[1].replace(")","").trim();
+        const name = strongText.trim();
+        const type = typeText.replace("(", "").replace(")", "").trim();
 
         const progressText = Item.querySelector(".progress-text").textContent.replace("Progresso:", "").trim();
         const statusText = Item.querySelector("span").textContent.replace("Status:", "").trim();
