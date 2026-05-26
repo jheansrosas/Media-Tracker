@@ -33,12 +33,23 @@
                     <option value="completed">Finalizado</option>
                 </select>
 
-                <label for="progress">Onde parei</label>
-                <input 
-                    type="text"
-                    id="progress"
-                    placeholder="Ex: T2 EP5, Cap 7, Página 32"
-                >
+                <div id="series-fields" class="dynamic-fields">
+                    <label for="season">Temporada</label>
+                    <input type="number" id="season" placeholder="Ex: 2">
+
+                    <label for="episode">Episódio</label>
+                    <input type="number" id="episode" placeholder="Ex: 5">
+                </div>
+
+                <div id="chapter-fields" class="dynamic-fields">
+                    <label for="chapter">Capítulo</label>
+                    <input type="number" id="chapter" placeholder="Ex: 12">
+                </div>
+
+                <div id="book-fields" class="dynamic-fields">
+                    <label for="page">Página</label>
+                    <input type="number" id="page" placeholder="Ex: 120">
+                </div>
 
                 <button type="submit">Adicionar</button>
             </form>
