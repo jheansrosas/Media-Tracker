@@ -96,8 +96,10 @@ function createMediaCard(name, type, statusText, progressText) {
         </div>
     `;
 
+    li.dataset.type = type;
+
     return li;
-}
+};
 
 // Escutando o envio do formulário
 form.addEventListener("submit", function(event){
@@ -162,11 +164,11 @@ mediaList.addEventListener("click", function(event) {
         const progressSpan = li.querySelector(".progress-text");
         const statusSpan = li.querySelector("span");
 
-        const text = li.querySelector("strong").nextSibling.textContent;
+        const type = li.dataset.type;
 
         let mudou = false;
 
-        if(text.includes("Filme")) {
+        if(type === "Filme") {
 
             const novoStatus = prompt("Digite: Planejado ou Finalizado");
 
